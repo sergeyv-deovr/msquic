@@ -441,11 +441,6 @@ function Invoke-Test {
         $RemoteArguments += " -exec:lowlat"
     }
 
-    if ($XDP) {
-        $RemoteArguments += " -pollidle:10000"
-        $LocalArguments += " -pollidle:10000"
-    }
-
     if ($QTIP) {
         $RemoteArguments += " -qtip:1"
         $LocalArguments += " -qtip:1"
