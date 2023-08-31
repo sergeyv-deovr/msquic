@@ -192,10 +192,7 @@
                 {
                     "Name": "ResponseSize",
                     "Local": {
-                        "0": "-response:0",
-                        "512": "-response:512",
-                        "4096": "-response:4096",
-                        "16384": "-response:16384"
+                        "4096": "-response:4096"
                     },
                     "Default": "4096"
                 }
