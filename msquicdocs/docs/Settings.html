@@ -871,6 +871,12 @@ Generally MsQuic already choses the best / most correct default values for all s
 <td>Get-only</td>
 <td>Stream-level statistics.</td>
 </tr>
+<tr>
+<td><code>QUIC_PARAM_STREAM_RELIABLE_OFFSET</code> <br> 5</td>
+<td>uint64_t</td>
+<td>Get/Set</td>
+<td>Part of the new Reliable Reset preview feature. Sets/Gets the number of bytes a sender must send before closing SEND path.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="see-also">See Also</h2>

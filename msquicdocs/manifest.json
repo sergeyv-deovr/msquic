@@ -1,5 +1,4 @@
 {
-  "homepages": [],
   "source_base_path": "/home/runner/work/msquic/msquic",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -1005,7 +1004,6 @@
       "version": ""
     }
   ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"
