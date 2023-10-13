@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package infomediji.haptics;
+
+option go_package = "./entities";
+option csharp_namespace = "DeoVR.QuicNet.Haptics";
+
+enum FrameType {
+  UNKNOWN = 0;
+  SUBSCRIPTION = 1;
+  PUBLICATION = 2;
+  SIGNAL = 3;
+}
+
+message Auth {
+  message JwtPayload {
+    FrameType type = 1;
+    string publication_id = 2;
+    string subscription_id = 3;
+  }
+
+  string jwt_token = 1;
+}
+
+message Signal{
+  double value = 1;
+  int64 timestamp_ms = 2;
+}
+
+enum ApplicationErrorCodes {
+  NO_ERROR = 0;
+  INTERNAL = 1;
+  UNAUTHORIZED = 2;
+  BAD_REQUEST = 3;
+  INVALID_TOKEN = 4;
+  STREAM_MOVED = 5;
+  STREAM_FINISHED = 6;
+  PUBLICATION_NOT_FOUND = 7;
+}
+
+
+// Publication is received when client requests to register new stream
+message Publication {
+  string publication_id = 1;
+  string jwt_key = 2;
+  string signal_version = 3;
+  string device_id = 4;
+}
+
+// List of publications
+message Publications { repeated Publication publications = 1; }

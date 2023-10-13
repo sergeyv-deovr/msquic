@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "MsQuicTool": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\code\\msquic\\artifacts\\bin\\windows\\x64_Debug_schannel\\msquic.dll",
+      "nativeDebugging": true
+    }
+  }
+}

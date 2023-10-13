@@ -8,3 +8,5 @@
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("MsQuicTool")]
+[assembly: InternalsVisibleTo("MsQuicToolDeoVR")]
+[assembly: InternalsVisibleTo("DeoVR.QuicNet")]

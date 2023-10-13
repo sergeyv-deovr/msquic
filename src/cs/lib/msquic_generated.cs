@@ -22,13 +22,13 @@ namespace Microsoft.Quic
     {
     }
 
-    internal enum QUIC_TLS_PROVIDER
+    public enum QUIC_TLS_PROVIDER
     {
         SCHANNEL = 0x0000,
         OPENSSL = 0x0001,
     }
 
-    internal enum QUIC_EXECUTION_PROFILE
+    public enum QUIC_EXECUTION_PROFILE
     {
         LOW_LATENCY,
         MAX_THROUGHPUT,
@@ -36,7 +36,7 @@ namespace Microsoft.Quic
         REAL_TIME,
     }
 
-    internal enum QUIC_LOAD_BALANCING_MODE
+    public enum QUIC_LOAD_BALANCING_MODE
     {
         DISABLED,
         SERVER_ID_IP,
@@ -44,7 +44,7 @@ namespace Microsoft.Quic
         COUNT,
     }
 
-    internal enum QUIC_TLS_ALERT_CODES
+    public enum QUIC_TLS_ALERT_CODES
     {
         SUCCESS = 0xFFFF,
         UNEXPECTED_MESSAGE = 10,
@@ -63,7 +63,7 @@ namespace Microsoft.Quic
         MAX = 255,
     }
 
-    internal enum QUIC_CREDENTIAL_TYPE
+    public enum QUIC_CREDENTIAL_TYPE
     {
         NONE,
         CERTIFICATE_HASH,
@@ -75,7 +75,7 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_CREDENTIAL_FLAGS
+    public enum QUIC_CREDENTIAL_FLAGS
     {
         NONE = 0x00000000,
         CLIENT = 0x00000001,
@@ -102,7 +102,7 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_ALLOWED_CIPHER_SUITE_FLAGS
+    public enum QUIC_ALLOWED_CIPHER_SUITE_FLAGS
     {
         NONE = 0x0,
         AES_128_GCM_SHA256 = 0x1,
@@ -111,20 +111,20 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_CERTIFICATE_HASH_STORE_FLAGS
+    public enum QUIC_CERTIFICATE_HASH_STORE_FLAGS
     {
         NONE = 0x0000,
         MACHINE_STORE = 0x0001,
     }
 
     [System.Flags]
-    internal enum QUIC_CONNECTION_SHUTDOWN_FLAGS
+    public enum QUIC_CONNECTION_SHUTDOWN_FLAGS
     {
         NONE = 0x0000,
         SILENT = 0x0001,
     }
 
-    internal enum QUIC_SERVER_RESUMPTION_LEVEL
+    public enum QUIC_SERVER_RESUMPTION_LEVEL
     {
         NO_RESUME,
         RESUME_ONLY,
@@ -132,13 +132,13 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_SEND_RESUMPTION_FLAGS
+    public enum QUIC_SEND_RESUMPTION_FLAGS
     {
         NONE = 0x0000,
         FINAL = 0x0001,
     }
 
-    internal enum QUIC_STREAM_SCHEDULING_SCHEME
+    public enum QUIC_STREAM_SCHEDULING_SCHEME
     {
         FIFO = 0x0000,
         ROUND_ROBIN = 0x0001,
@@ -146,7 +146,7 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_STREAM_OPEN_FLAGS
+    public enum QUIC_STREAM_OPEN_FLAGS
     {
         NONE = 0x0000,
         UNIDIRECTIONAL = 0x0001,
@@ -155,7 +155,7 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_STREAM_START_FLAGS
+    public enum QUIC_STREAM_START_FLAGS
     {
         NONE = 0x0000,
         IMMEDIATE = 0x0001,
@@ -165,7 +165,7 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_STREAM_SHUTDOWN_FLAGS
+    public enum QUIC_STREAM_SHUTDOWN_FLAGS
     {
         NONE = 0x0000,
         GRACEFUL = 0x0001,
@@ -177,7 +177,7 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_RECEIVE_FLAGS
+    public enum QUIC_RECEIVE_FLAGS
     {
         NONE = 0x0000,
         ZERO_RTT = 0x0001,
@@ -185,7 +185,7 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_SEND_FLAGS
+    public enum QUIC_SEND_FLAGS
     {
         NONE = 0x0000,
         ALLOW_0_RTT = 0x0001,
@@ -195,7 +195,7 @@ namespace Microsoft.Quic
         DELAY_SEND = 0x0010,
     }
 
-    internal enum QUIC_DATAGRAM_SEND_STATE
+    public enum QUIC_DATAGRAM_SEND_STATE
     {
         UNKNOWN,
         SENT,
@@ -207,7 +207,7 @@ namespace Microsoft.Quic
     }
 
     [System.Flags]
-    internal enum QUIC_EXECUTION_CONFIG_FLAGS
+    public enum QUIC_EXECUTION_CONFIG_FLAGS
     {
         NONE = 0x0000,
         QTIP = 0x0001,
@@ -437,13 +437,13 @@ namespace Microsoft.Quic
         internal sbyte* ServerName;
     }
 
-    internal enum QUIC_TLS_PROTOCOL_VERSION
+    public enum QUIC_TLS_PROTOCOL_VERSION
     {
         UNKNOWN = 0,
         TLS_1_3 = 0x3000,
     }
 
-    internal enum QUIC_CIPHER_ALGORITHM
+    public enum QUIC_CIPHER_ALGORITHM
     {
         NONE = 0,
         AES_128 = 0x660E,
@@ -451,26 +451,26 @@ namespace Microsoft.Quic
         CHACHA20 = 0x6612,
     }
 
-    internal enum QUIC_HASH_ALGORITHM
+    public enum QUIC_HASH_ALGORITHM
     {
         NONE = 0,
         SHA_256 = 0x800C,
         SHA_384 = 0x800D,
     }
 
-    internal enum QUIC_KEY_EXCHANGE_ALGORITHM
+    public enum QUIC_KEY_EXCHANGE_ALGORITHM
     {
         NONE = 0,
     }
 
-    internal enum QUIC_CIPHER_SUITE
+    public enum QUIC_CIPHER_SUITE
     {
         TLS_AES_128_GCM_SHA256 = 0x1301,
         TLS_AES_256_GCM_SHA384 = 0x1302,
         TLS_CHACHA20_POLY1305_SHA256 = 0x1303,
     }
 
-    internal enum QUIC_CONGESTION_CONTROL_ALGORITHM
+    public enum QUIC_CONGESTION_CONTROL_ALGORITHM
     {
         CUBIC,
         BBR,
@@ -882,7 +882,7 @@ namespace Microsoft.Quic
         internal ulong BindingRecvDroppedPackets;
     }
 
-    internal enum QUIC_PERFORMANCE_COUNTERS
+    public enum QUIC_PERFORMANCE_COUNTERS
     {
         CONN_CREATED,
         CONN_HANDSHAKE_FAIL,
@@ -2022,7 +2022,7 @@ namespace Microsoft.Quic
         internal void* Buffer;
     }
 
-    internal enum QUIC_LISTENER_EVENT_TYPE
+    public enum QUIC_LISTENER_EVENT_TYPE
     {
         NEW_CONNECTION = 0,
         STOP_COMPLETE = 1,
@@ -2106,7 +2106,7 @@ namespace Microsoft.Quic
         }
     }
 
-    internal enum QUIC_CONNECTION_EVENT_TYPE
+    public enum QUIC_CONNECTION_EVENT_TYPE
     {
         CONNECTED = 0,
         SHUTDOWN_INITIATED_BY_TRANSPORT = 1,
@@ -2502,7 +2502,7 @@ namespace Microsoft.Quic
         }
     }
 
-    internal enum QUIC_STREAM_EVENT_TYPE
+    public enum QUIC_STREAM_EVENT_TYPE
     {
         START_COMPLETE = 0,
         RECEIVE = 1,
