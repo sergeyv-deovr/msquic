@@ -1,21 +1,27 @@
 using AOT;
 using DeoVR.Net.Quic;
 using UnityEngine;
+using UnityEngine.Scripting;
 
-public class RuntimePackageInitializer
+[assembly: AlwaysLinkAssembly]
+
+[Preserve]
+public static class RuntimePackageInitializer
 {
-    //#if PLATFORM_ANDROID
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    static void OnBeforeSceneLoadRuntimeMethod()
+#if UNITY_ANDROID
+    [Preserve]
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
+    public static void OnBeforeSceneLoadRuntimeMethod()
     {
-        // Your initialization logic here
+        if (Application.platform != RuntimePlatform.Android)
+            return;
 
-        Debug.Log("Initializing QUIC callbacks!");
         unsafe
         {
             Quic.ConnectionCallback = ConnectionCallback;
             Quic.StreamCallback = StreamCallback;
         }
+        Debug.Log("QUIC callbacks initialized");
     }
 
     [MonoPInvokeCallback(typeof(Quic.CallbackDelegate))]
@@ -23,5 +29,5 @@ public class RuntimePackageInitializer
 
     [MonoPInvokeCallback(typeof(Quic.CallbackDelegate))]
     public static unsafe int StreamCallback(void* handle, void* context, void* evnt) => Quic.HandleStreamEvent(handle, context, evnt);
-//#endif
+#endif
 }

@@ -1,0 +1,3 @@
+<linker>
+    <assembly fullname="DeoVR.Net.Quic.Unity" preserve="all"/>
+</linker>

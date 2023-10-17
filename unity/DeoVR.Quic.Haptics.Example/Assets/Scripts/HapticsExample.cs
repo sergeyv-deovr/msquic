@@ -28,7 +28,6 @@ public class HapticsExample : MonoBehaviour
     private float _t1;
     private float _t2;
     private int _signalsCount = 0;
-    private float _lastUpdate = 0;
 
     private void Start()
     {
@@ -139,22 +138,24 @@ public class HapticsExample : MonoBehaviour
         if (_connection?.IsActive ?? false) return;
         if (_connection?.IsOpen ?? false) return;
 
+        Debug.Log("Loading publications");
         var publications = await GetPublications(_hapticApi);
         if (publications == null) return;
 
         var publication = publications[0];
-        if (publications.Length > 1)
-        {
-            Console.WriteLine("Available publications:");
-            for (var i = 0; i < publications.Length; i++)
-            {
-                Console.WriteLine($"{i}: {JsonSerializer.Serialize(publications[i])}");
-            }
-            Console.Write("Enter publication index to subscribe:");
-            var id = int.Parse(Console.ReadLine());
-            publication = publications[id];
-        }
+        //if (publications.Length > 1)
+        //{
+        //    Debug.Log("Available publications:");
+        //    for (var i = 0; i < publications.Length; i++)
+        //    {
+        //        Debug.Log($"{i}: {JsonSerializer.Serialize(publications[i])}");
+        //    }
+        //    Debug.Log("Enter publication index to subscribe:");
+        //    var id = int.Parse(Console.ReadLine());
+        //    publication = publications[id];
+        //}
 
+        Debug.Log($"Subscribing to publication: {publication.publication_id}");
         var auth = await Subscribe(_hapticApi, publication);
         if (auth == null)
         {
@@ -162,11 +163,12 @@ public class HapticsExample : MonoBehaviour
             return;
         }
 
+        Debug.Log("Creating quic connection");
         _connection = _quicContext.CreateConnection(new QuicConnectionSettings
         {
             Host = "46.101.110.207",
             Port = 50000
-        }, new SimpleConnectionHandler());
+        });
 
         Debug.Log("Connecting");
         await _connection.OpenAsync();
@@ -236,15 +238,5 @@ public class HapticsExample : MonoBehaviour
 
         Debug.Log($"Subscription authorized. JWT={auth.jwt_key}");
         return auth;
-    }
-
-
-    class SimpleConnectionHandler : QuicConnectionEventHandler
-    {
-
-        public static void WhateverCallback()
-        {
-
-        }
     }
 }
