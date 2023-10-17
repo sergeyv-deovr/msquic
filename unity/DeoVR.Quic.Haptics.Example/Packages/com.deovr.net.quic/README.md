@@ -1,0 +1,1 @@
+To update QUIC protocol and Haptic Protocol binaries publish `./Src~/DeoVR.Net.Haptics` project using publish profile provided.

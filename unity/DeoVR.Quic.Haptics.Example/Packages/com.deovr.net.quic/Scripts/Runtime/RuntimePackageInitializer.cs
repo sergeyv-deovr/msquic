@@ -1,34 +1,27 @@
-﻿using AOT;
-using DeoVR.QuicNet;
-using DeoVR.QuicNet.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AOT;
+using DeoVR.Net.Quic;
+using UnityEngine;
 
-public static class QuicCallbacks
+public class RuntimePackageInitializer
 {
-    private static bool _isConfigured = false;
-
-    public static void Configure()
+    //#if PLATFORM_ANDROID
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void OnBeforeSceneLoadRuntimeMethod()
     {
-#if PLATFORM_ANDROID
-        if (_isConfigured) return;
-        _isConfigured = true;
+        // Your initialization logic here
+
+        Debug.Log("Initializing QUIC callbacks!");
         unsafe
         {
             Quic.ConnectionCallback = ConnectionCallback;
             Quic.StreamCallback = StreamCallback;
         }
-#endif
     }
 
-#if PLATFORM_ANDROID
     [MonoPInvokeCallback(typeof(Quic.CallbackDelegate))]
     public static unsafe int ConnectionCallback(void* handle, void* context, void* evnt) => Quic.HandleConnectionEvent(handle, context, evnt);
 
     [MonoPInvokeCallback(typeof(Quic.CallbackDelegate))]
     public static unsafe int StreamCallback(void* handle, void* context, void* evnt) => Quic.HandleStreamEvent(handle, context, evnt);
-#endif
+//#endif
 }

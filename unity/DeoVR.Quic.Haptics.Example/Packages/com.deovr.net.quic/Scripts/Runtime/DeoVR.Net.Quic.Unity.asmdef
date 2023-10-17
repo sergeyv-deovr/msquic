@@ -1,0 +1,17 @@
+{
+    "name": "DeoVR.Net.Quic.Unity",
+    "rootNamespace": "DeoVR.Net.Quic.Unity",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "DeoVR.Net.Haptics.dll",
+        "DeoVR.Net.Quic.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

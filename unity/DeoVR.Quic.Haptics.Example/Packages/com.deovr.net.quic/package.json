@@ -1,0 +1,13 @@
+{
+    "name": "com.deovr.net.quic",
+    "version": "1.0.0",
+    "displayName": "DeoVR Quic Protocol",
+    "description": "Integration package of MsQuic 2.2 library with Haptic streaming protocol",
+    "unity": "2022.3",
+    "keywords": ["Protocol", "Network"],
+    "category": "Network",
+    "repository": {
+      "url": "",
+      "type": "git"
+    }
+}

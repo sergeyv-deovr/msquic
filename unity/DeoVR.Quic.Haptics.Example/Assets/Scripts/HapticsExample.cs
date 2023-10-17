@@ -2,9 +2,8 @@ using System;
 using System.Collections;
 using System.Text.Json;
 using System.Threading.Tasks;
-using AOT;
-using DeoVR.QuicNet;
-using DeoVR.QuicNet.Core;
+using DeoVR.Net.Quic;
+using DeoVR.Net.Quic.Core;
 using DeoVR.QuicNet.Haptics;
 using Microsoft.Quic;
 using TMPro;
@@ -33,8 +32,6 @@ public class HapticsExample : MonoBehaviour
 
     private void Start()
     {
-        QuicCallbacks.Configure();
-
         _hapticApi = new HapticApi("https://haptics-stg.infomediji.com", _deviceId);
         _quicContext = Quic.Open(new QuicSettings
         {

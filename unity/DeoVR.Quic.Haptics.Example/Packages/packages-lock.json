@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.deovr.quic-haptics": {
-      "version": "file:com.deovr.quic-haptics",
+    "com.deovr.net.quic": {
+      "version": "file:com.deovr.net.quic",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

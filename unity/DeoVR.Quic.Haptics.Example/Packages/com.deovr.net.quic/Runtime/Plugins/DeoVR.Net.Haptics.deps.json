@@ -7,18 +7,17 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "DeoVR.QuicNet.Haptics/1.0.0": {
+      "DeoVR.Net.Haptics/1.0.0": {
         "dependencies": {
-          "DeoVR.QuicNet": "1.0.0",
+          "DeoVR.Net.Quic": "1.0.0",
           "Google.Protobuf": "3.24.4",
           "Grpc.Tools": "2.40.0",
           "NETStandard.Library": "2.0.3",
           "System.Net.Http.Json": "7.0.1",
-          "System.Text.Json": "7.0.3",
-          "msquic-net": "1.0.0"
+          "System.Text.Json": "7.0.3"
         },
         "runtime": {
-          "DeoVR.QuicNet.Haptics.dll": {}
+          "DeoVR.Net.Haptics.dll": {}
         }
       },
       "Google.Protobuf/3.24.4": {
@@ -143,29 +142,19 @@
           }
         }
       },
-      "DeoVR.QuicNet/1.0.0": {
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "msquic-net": "1.0.0"
-        },
-        "runtime": {
-          "DeoVR.QuicNet.dll": {}
-        }
-      },
-      "msquic-net/1.0.0": {
+      "DeoVR.Net.Quic/1.0.0": {
         "dependencies": {
           "System.Memory": "4.5.5",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
-          "msquic-net.dll": {}
+          "DeoVR.Net.Quic.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "DeoVR.QuicNet.Haptics/1.0.0": {
+    "DeoVR.Net.Haptics/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -261,12 +250,7 @@
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
-    "DeoVR.QuicNet/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "msquic-net/1.0.0": {
+    "DeoVR.Net.Quic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
